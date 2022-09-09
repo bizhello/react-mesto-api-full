@@ -1,0 +1,40 @@
+.popup-login__container {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.popup-login__logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 60px 0 0 0;
+    padding: 0;
+    background: url("../../images/error.svg") no-repeat;
+}
+.popup-login__text {
+    display: block;
+    justify-content: center;
+    margin: 32px 0 60px;
+    text-align: center;
+    padding: 0 7px 0 7px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+.popup-login__close {
+    background: url('../../images/close-Icon.svg');
+}
+.popup-login__logo_register {
+    background: url("../../images/success.svg") no-repeat;
+}
+
+
+
+
