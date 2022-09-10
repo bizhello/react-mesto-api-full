@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     if (isAuth) {
       req.user = {
         _id: isAuth,
-      }
+      };
       next();
     } else {
       throw new UnauthorizedError('Ошибка авторизации');

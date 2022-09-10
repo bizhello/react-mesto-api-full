@@ -31,13 +31,13 @@ export function EditProfilePopup({isOpen, onClose,onUpdateUser}) {
                 <input className="popup__name popup-profile__name" id="popup-name"
                        name="popup-name" type="text" minLength="2"
                        maxLength="40" autoComplete="off" placeholder="Введите имя" required onChange={handleChangeName} value={name ?? ""}/>
-                <span className="error" id="popup-name-error"></span>
+                {/*<span className="error" id="popup-name-error"></span>*/}
             </label>
             <label className="popup__input-container">
                 <input className="popup__name popup-profile__name" id="popup-status" name="popup-status"
                        type="text" minLength="2" maxLength="200" autoComplete="off"
                        placeholder="Введите стасус" required onChange={handleChangeDescription} value={description ?? ""}/>
-                <span className="error" id="popup-status-error"></span>
+                {/*<span className="error" id="popup-status-error"></span>*/}
             </label>
         </PopupWithForm>
     )

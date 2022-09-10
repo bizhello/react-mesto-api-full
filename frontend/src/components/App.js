@@ -165,8 +165,8 @@ function App() {
       const isLiked = !!(card.likes !== undefined && card.likes.includes(currentUser._id, 0));
       api.changeLikeCardStatus(card._id, !isLiked)
           .then((newCard) => {
-              setCards((state) => state.map((c) => c._id === card._id ? newCard : c)); //удаляется стейт
-              // setCards((state) => state.map((c) => c._id === card._id ? { ...newCard, ownerId: data.id } : c));
+              // setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+              setCards((state) => state.map((c) => c._id === card._id ? { ...newCard, ownerId: data.id } : c));
               })
           .catch(err => {
               console.log(err);
@@ -184,7 +184,7 @@ function App() {
   function createCard(name, link) {
       api.createCard(name, link)
           .then((res) => {
-              setCards([{ ...res, ownerId: res.owner._id }, ...cards]);
+              setCards([{ ...res, ownerId: data.id }, ...cards]);
           })
           .catch(err => {
               console.log(err);

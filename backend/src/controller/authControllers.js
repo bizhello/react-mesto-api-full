@@ -26,7 +26,7 @@ async function login(req, res, next) {
         maxAge: 3600000,
         httpOnly: true,
         secure: true,
-        sameSite: false,
+        sameSite: 'none',
       })
       .send({ id: user.id });
   } catch (error) {

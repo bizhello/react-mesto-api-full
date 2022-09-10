@@ -19,7 +19,7 @@ export function EditAvatarPopup(props) {
             <div className="popup__input-container">
                 <input className="popup__name popup-edit-avatar__src" id="popup-edit-avatar-src"
                        name="popup-edit-avatar-src" placeholder="Ссылка на картинку" type="url" required onChange={handleChangeAvatar}/>
-                <span className="error" id="popup-edit-avatar-src-error"></span>
+                {/*<span className="error" id="popup-edit-avatar-src-error"></span>*/}
             </div>
         </PopupWithForm>
     )

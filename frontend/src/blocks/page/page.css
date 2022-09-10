@@ -10,7 +10,8 @@
   .page {
     padding-top: 28px;
     max-width: 320px;
-    margin: 28px auto 36px;
+    /*margin: 28px auto 36px;*/
+    margin: 0 auto;
   }
 }
 

@@ -65,9 +65,4 @@ class validate extends React.Component {
             this.setState.formValid(true)
         }
     }
-
-
 }
-
-
-

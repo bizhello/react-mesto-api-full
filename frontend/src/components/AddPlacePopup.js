@@ -32,7 +32,7 @@ export function AddPlacePopup(props) {
                     maxLength="30"
                     required
                     onChange={handleChangeName}/>
-                <span className="error" id="popup-add-element-name-error"></span>
+                {/*<span className="error" id="popup-add-element-name-error"></span>*/}
             </div>
             <div className="popup__input-container">
                 <input
@@ -43,7 +43,7 @@ export function AddPlacePopup(props) {
                     type="url"
                     required
                     onChange={handleChangeLink}/>
-                <span className="error" id="popup-add-element-src-error"></span>
+                {/*<span className="error" id="popup-add-element-src-error"></span>*/}
             </div>
         </PopupWithForm>
     )

@@ -5,7 +5,7 @@ const { BadRequestError } = require('../../utils/errors/BadRequestError');
 
 async function getCards(req, res, next) {
   try {
-    console.log('CARDS',req.user._id);
+    console.log('CARDS', req.user._id);
     const cards = await Card.find({});
     res.send(cards);
   } catch (error) {
@@ -46,12 +46,12 @@ async function deleteCards(req, res, next) {
 
 async function likeCard(req, res, next) {
   try {
-    await Card.findByIdAndUpdate(
+    const newCard = await Card.findByIdAndUpdate(
       req.params.cardId,
       { $addToSet: { likes: req.user._id } },
       { new: true },
     ).orFail(() => new NotFoundError('Пользователь с указанным id не существует'));
-    res.send({ message: 'Лайк поставлен' });
+    res.send(newCard);
   } catch (error) {
     if (error.name === 'CastError') {
       next(new BadRequestError('Данные по этому id не найдены'));
@@ -63,12 +63,12 @@ async function likeCard(req, res, next) {
 
 async function dislikeCard(req, res, next) {
   try {
-    await Card.findByIdAndUpdate(
+    const newCard = await Card.findByIdAndUpdate(
       req.params.cardId,
       { $pull: { likes: req.user._id } },
       { new: true },
     ).orFail(() => new NotFoundError('Пользователь с указанным id не существует'));
-    res.send({ message: 'Лайк убран' });
+    res.send(newCard);
   } catch (error) {
     if (error.name === 'CastError') {
       next(new BadRequestError('Данные по этому id не найдены'));

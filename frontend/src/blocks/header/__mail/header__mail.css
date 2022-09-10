@@ -9,5 +9,9 @@
     text-align: right;
     color: #FFFFFF;
 }
-
+@media (max-width: 905px)  {
+    p.header__mail {
+        display: none;
+    }
+}
 
