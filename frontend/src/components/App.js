@@ -166,7 +166,7 @@ function App() {
       api.changeLikeCardStatus(card._id, !isLiked)
           .then((newCard) => {
               // setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-              setCards((state) => state.map((c) => c._id === card._id ? { ...newCard, ownerId: newCard._id } : c));
+              setCards((state) => state.map((c) => c._id === card._id ? { ...newCard, ownerId: newCard.owner } : c));
               })
           .catch(err => {
               console.log(err);
